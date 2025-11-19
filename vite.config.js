@@ -78,8 +78,5 @@ const copySwaggerPlugin = () => {
 }
 
 export default defineConfig({
-  plugins: [react(), copySwaggerPlugin()],
-  server: {
-    port: 3000
-  }
+  plugins: [react(), copySwaggerPlugin()]
 })
