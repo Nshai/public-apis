@@ -22,7 +22,7 @@ function DownloadSwagger() {
 
   const handleDownload = (filename) => {
     const link = document.createElement('a')
-    link.href = `/swaggers/${filename}`
+    link.href = `./swaggers/${filename}`
     link.download = filename
     document.body.appendChild(link)
     link.click()
