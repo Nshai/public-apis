@@ -79,6 +79,7 @@ const copySwaggerPlugin = () => {
 
 // Development configuration with asset copying
 export default defineConfig({
+  base: '/public-apis/',
   plugins: [react(), copySwaggerPlugin()],
   server: {
     port: 3000
