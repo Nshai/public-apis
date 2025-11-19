@@ -13,18 +13,23 @@ const copySwaggerPlugin = () => {
       const reportsDir = resolve(__dirname, '../../output/reports')
       const publicDataDir = resolve(__dirname, 'public/data')
 
-      // Create public/swaggers directory if it doesn't exist
-      if (!existsSync(publicSwaggersDir)) {
-        mkdirSync(publicSwaggersDir, { recursive: true })
+      // Check if source directories exist
+      const swaggersDirExists = existsSync(swaggersDir)
+      const reportsDirExists = existsSync(reportsDir)
+
+      // If neither directory exists, skip copying entirely
+      if (!swaggersDirExists && !reportsDirExists) {
+        console.log('Skipping asset copy: output directories not found')
+        return
       }
 
-      // Create public/data directory if it doesn't exist
-      if (!existsSync(publicDataDir)) {
-        mkdirSync(publicDataDir, { recursive: true })
-      }
+      // Copy swagger files if directory exists
+      if (swaggersDirExists) {
+        // Create public/swaggers directory if it doesn't exist
+        if (!existsSync(publicSwaggersDir)) {
+          mkdirSync(publicSwaggersDir, { recursive: true })
+        }
 
-      // Copy swagger files, excluding stats files
-      if (existsSync(swaggersDir)) {
         const files = readdirSync(swaggersDir)
         files.forEach(file => {
           // Skip stats.json files
@@ -41,20 +46,32 @@ const copySwaggerPlugin = () => {
             console.error(`Error copying ${file}:`, error.message)
           }
         })
+      } else {
+        console.log('Skipping swagger files: output/swaggers directory not found')
       }
 
-      // Copy api-data.json from reports to public/data
-      const apiDataSrc = join(reportsDir, 'api-data.json')
-      const apiDataDest = join(publicDataDir, 'api-data.json')
-      if (existsSync(apiDataSrc)) {
-        try {
-          copyFileSync(apiDataSrc, apiDataDest)
-          console.log(`Copied api-data.json to public/data/`)
-        } catch (error) {
-          console.error(`Error copying api-data.json:`, error.message)
+      // Copy api-data.json if reports directory exists
+      if (reportsDirExists) {
+        const apiDataSrc = join(reportsDir, 'api-data.json')
+        const apiDataDest = join(publicDataDir, 'api-data.json')
+
+        if (existsSync(apiDataSrc)) {
+          // Create public/data directory if it doesn't exist
+          if (!existsSync(publicDataDir)) {
+            mkdirSync(publicDataDir, { recursive: true })
+          }
+
+          try {
+            copyFileSync(apiDataSrc, apiDataDest)
+            console.log(`Copied api-data.json to public/data/`)
+          } catch (error) {
+            console.error(`Error copying api-data.json:`, error.message)
+          }
+        } else {
+          console.log('Skipping api-data.json: file not found in output/reports')
         }
       } else {
-        console.warn(`Warning: api-data.json not found at ${apiDataSrc}`)
+        console.log('Skipping api-data.json: output/reports directory not found')
       }
     }
   }
