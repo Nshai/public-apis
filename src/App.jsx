@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     // Load API data
-    fetch('/data/api-data.json')
+    fetch('./data/api-data.json')
       .then(response => response.json())
       .then(data => {
         setApiData(data)
