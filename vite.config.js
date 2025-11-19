@@ -40,6 +40,7 @@ const copySwaggerPlugin = () => {
 }
 
 export default defineConfig({
+  base: '/public-apis/',
   plugins: [react(), copySwaggerPlugin()],
   server: {
     port: 3000
