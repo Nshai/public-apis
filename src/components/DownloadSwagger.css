@@ -1,0 +1,86 @@
+.download-swagger {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.download-swagger h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.swagger-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.swagger-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.swagger-card:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+}
+
+.swagger-info {
+  margin-bottom: 16px;
+}
+
+.swagger-info h3 {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.swagger-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.download-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  align-self: flex-start;
+}
+
+.download-button:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .swagger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-swagger {
+    padding: 16px;
+  }
+}

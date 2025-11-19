@@ -3,6 +3,7 @@ import './App.css'
 import ApiTable from './components/ApiTable'
 import Summary from './components/Summary'
 import FilterBar from './components/FilterBar'
+import DownloadSwagger from './components/DownloadSwagger'
 
 function App() {
   const [apiData, setApiData] = useState(null)
@@ -60,6 +61,8 @@ function App() {
 
       <main className="app-main">
         <Summary summary={apiData.summary} />
+
+        <DownloadSwagger />
 
         <FilterBar
           filterText={filterText}
