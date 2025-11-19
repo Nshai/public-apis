@@ -1,0 +1,5380 @@
+openapi: 3.0.1
+info:
+  title: Intelliflo Consolidated Public APIs (V1)
+  description: Consolidated OpenAPI specification for all Intelliflo Public APIs using V1 swagger endpoints, generated from multiple service swagger definitions.
+  version: 2025-11-18
+  contact:
+    name: Intelliflo API Support
+    url: "https://developer.intelliflo.com"
+servers:
+  -
+    url: "https://api.intelliflo.com"
+    description: Production API Server
+paths:
+  /v1/brands:
+    get:
+      operationId: ListBrands
+      summary: Get brand for either current user or non-authenticated one.
+      description: Get brand for either current user or non-authenticated one.
+      tags:
+        - brand
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/expensecategories:
+    get:
+      operationId: ListClientsExpensecategories
+      summary: Gets all Expense Categories.
+      description: Gets all Expense Categories.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/expensecategories/{expenseCategoryId}:
+    head:
+      operationId: ExistsExpensecategory
+      summary: Gets an Expense Category if any, for the specified Expense Category Id.
+      description: Gets an Expense Category if any, for the specified Expense Category Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetExpensecategory
+      summary: Gets an Expense Category if any, for the specified Expense Category Id.
+      description: Gets an Expense Category if any, for the specified Expense Category Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/expensegroups:
+    get:
+      operationId: ListClientsExpensegroups
+      summary: Gets all Expense Groups.
+      description: Gets all Expense Groups.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/expensegroups/{expenseGroupId}:
+    head:
+      operationId: ExistsExpensegroup
+      summary: Gets an Expense Group if any, for the specified Expense Group Id.
+      description: Gets an Expense Group if any, for the specified Expense Group Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetExpensegroup
+      summary: Gets an Expense Group if any, for the specified Expense Group Id.
+      description: Gets an Expense Group if any, for the specified Expense Group Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/search:
+    post:
+      operationId: CreateClientsSearch
+      summary: Searchs clients using  filters and ordering specified in request
+      description: Searchs clients using  filters and ordering specified in request
+      tags:
+        - search
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/documents/{documentId}:
+    head:
+      operationId: ExistsClientDocument
+      summary: Returns document data from private storage
+      description: Returns document data from private storage
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/documents/{documentId}/content:
+    get:
+      operationId: GetClientDocumentContent
+      summary: Returns document content from private storage
+      description: Returns document content from private storage
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/expenditure:
+    head:
+      operationId: ExistsClientExpenditure
+      summary: Gets Expenditure if any, for the specified client id/for the client of the current context.
+      description: Gets Expenditure if any, for the specified client id/for the client of the current context.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/expenditure/expenses:
+    get:
+      operationId: ListClientExpendituresExpenses
+      summary: Gets all Expenses for the specified client id OR for the client of the current context's Expenditure.
+      description: Gets all Expenses for the specified client id OR for the client of the current context's Expenditure.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientsExpenditureExpenses
+      summary: Updates a collection of Expenses for a client OR for the client of the current context's Expenditure.
+      description: Updates a collection of Expenses for a client OR for the client of the current context's Expenditure.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/expenditure/expenses/{expenseId}:
+    delete:
+      operationId: DeleteClientExpense
+      summary: Deletes an Expense for a client OR for the client of the current context's Expenditure.
+      description: Deletes an Expense for a client OR for the client of the current context's Expenditure.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsClientExpense
+      summary: Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.
+      description: Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientExpense
+      summary: Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.
+      description: Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientExpense
+      summary: Updates an Expense for a client OR for the client of the current context's Expenditure.
+      description: Updates an Expense for a client OR for the client of the current context's Expenditure.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/financialsummary:
+    get:
+      operationId: GetClientFinancialsummary
+      summary: Get a summary of a Portfolio
+      description: Get a summary of a Portfolio
+      tags:
+        - financialsummary
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/financialsummarybycategory:
+    get:
+      operationId: GetClientFinancialsummarybycategory
+      summary: Get a categorised summary of a clients entire Portfolio
+      description: Get a categorised summary of a clients entire Portfolio
+      tags:
+        - financialsummary
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals:
+    get:
+      operationId: ListClientGoals
+      summary: Get all Client Goals
+      description: Get all Client Goals
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals/{goalId}:
+    delete:
+      operationId: DeleteClientGoal
+      summary: Delete a Goal
+      description: Delete a Goal
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsClientGoal
+      summary: Get the specified Client Goal
+      description: Get the specified Client Goal
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientGoal
+      summary: Get the specified Client Goal
+      description: Get the specified Client Goal
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientGoal
+      summary: Update a Goal
+      description: Update a Goal
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals/{goalId}/linktoplan:
+    post:
+      operationId: CreateClientGoalLinktoplan
+      summary: Link a Goal to a Plan
+      description: Link a Goal to a Plan
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals/{goalId}/markascompleted:
+    post:
+      operationId: MarkascompletedClientGoal
+      summary: Mark a Goal as Completed
+      description: Mark a Goal as Completed
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals/{goalId}/markasincomplete:
+    post:
+      operationId: MarkasincompleteClientGoal
+      summary: Mark a Goal as Incomplete
+      description: Mark a Goal as Incomplete
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/goals/{goalId}/unlink:
+    post:
+      operationId: CreateClientGoalUnlink
+      summary: Unlink a Goal from an Account or Plan
+      description: Unlink a Goal from an Account or Plan
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/incomes:
+    put:
+      operationId: UpdateClientsIncomes
+      summary: UpdateClientsIncomes operation
+      description: 
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/incomes/{incomeId}:
+    head:
+      operationId: ExistsClientIncome
+      summary: ExistsClientIncome operation
+      description: 
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/insights:
+    post:
+      operationId: CreateClientInsight
+      summary: Post insight for a given client with clientId.
+      description: Post insight for a given client with clientId.
+      tags:
+        - insights
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Insight
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Insight)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/liabilities:
+    get:
+      operationId: ListClientLiabilities
+      summary: Gets all Liabilities for the specified client id OR for the client of the current context.
+      description: Gets all Liabilities for the specified client id OR for the client of the current context.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/liabilities/{liabilityId}:
+    delete:
+      operationId: DeleteClientLiability
+      summary: Deletes a Liability for a client OR for the client of the current context.
+      description: Deletes a Liability for a client OR for the client of the current context.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsClientLiability
+      summary: Gets Liability if any, for the specified client id/for the client of the current context and liability Id.
+      description: Gets Liability if any, for the specified client id/for the client of the current context and liability Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientLiability
+      summary: Gets Liability if any, for the specified client id/for the client of the current context and liability Id.
+      description: Gets Liability if any, for the specified client id/for the client of the current context and liability Id.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientLiability
+      summary: Updates a Liability for a client OR for the client of the current context.
+      description: Updates a Liability for a client OR for the client of the current context.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/creditcards:
+    get:
+      operationId: ListClientPlansCreditcards
+      summary: Get all plans of type credit card for the client
+      description: Get all plans of type credit card for the client
+      tags:
+        - creditcards
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/creditcards/{planId}:
+    delete:
+      operationId: DeleteClientCreditcard
+      summary: Delete Credit Card plan
+      description: Delete Credit Card plan
+      tags:
+        - creditcards
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientCreditcard
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - creditcards
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientCreditcard
+      summary: Update Credit Card plan
+      description: Update Credit Card plan
+      tags:
+        - creditcards
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/currentaccounts:
+    get:
+      operationId: ListClientPlansCurrentaccounts
+      summary: Returns a collection of investment plans (current accounts) for the specified client.
+      description: Returns a collection of investment plans (current accounts) for the specified client.
+      tags:
+        - currentaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/currentaccounts/{planId}:
+    delete:
+      operationId: DeleteClientCurrentaccount
+      summary: Delete investment plan (current account)
+      description: Delete investment plan (current account)
+      tags:
+        - currentaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientCurrentaccount
+      summary: Get the specified Plan (current account)
+      description: Get the specified Plan (current account)
+      tags:
+        - currentaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientCurrentaccount
+      summary: Update investment plan (current account)
+      description: Update investment plan (current account)
+      tags:
+        - currentaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/investments:
+    get:
+      operationId: ListClientPlansInvestments
+      summary: Returns a collection of investment plans for the specified client.
+      description: Returns a collection of investment plans for the specified client.
+      tags:
+        - investments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/investments/{planId}:
+    delete:
+      operationId: DeleteClientInvestment
+      summary: Delete investment plan
+      description: Delete investment plan
+      tags:
+        - investments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientInvestment
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - investments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientInvestment
+      summary: Update investment plan
+      description: Update investment plan
+      tags:
+        - investments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/loans:
+    get:
+      operationId: ListClientPlansLoans
+      summary: Get all plans of type loan for the client
+      description: Get all plans of type loan for the client
+      tags:
+        - loans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/loans/{planId}:
+    delete:
+      operationId: DeleteClientLoan
+      summary: Delete loan plan
+      description: Delete loan plan
+      tags:
+        - loans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientLoan
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - loans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientLoan
+      summary: Update Loan plan
+      description: Update Loan plan
+      tags:
+        - loans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/mortgages:
+    get:
+      operationId: ListClientPlansMortgages
+      summary: Get all plans of type mortgage for the client
+      description: Get all plans of type mortgage for the client
+      tags:
+        - mortgages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/mortgages/{planId}:
+    delete:
+      operationId: DeleteClientMortgage
+      summary: Delete mortgage plan
+      description: Delete mortgage plan
+      tags:
+        - mortgages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientMortgage
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - mortgages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientMortgage
+      summary: Update mortgage plan
+      description: Update mortgage plan
+      tags:
+        - mortgages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/pensions:
+    get:
+      operationId: ListClientPlansPensions
+      summary: Get all plans of type pension for the client
+      description: Get all plans of type pension for the client
+      tags:
+        - pensions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/pensions/{planId}:
+    delete:
+      operationId: DeleteClientPension
+      summary: Delete pension plan
+      description: Delete pension plan
+      tags:
+        - pensions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientPension
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - pensions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientPension
+      summary: Update pension plan
+      description: Update pension plan
+      tags:
+        - pensions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/protections:
+    get:
+      operationId: ListClientPlansProtections
+      summary: Get all plans of type mortgage for the client
+      description: Get all plans of type mortgage for the client
+      tags:
+        - protections
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/protections/{planId}:
+    delete:
+      operationId: DeleteClientProtection
+      summary: Delete protection plan
+      description: Delete protection plan
+      tags:
+        - protections
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientProtection
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - protections
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientProtection
+      summary: Update protection plan
+      description: Update protection plan
+      tags:
+        - protections
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/savingsaccounts:
+    get:
+      operationId: ListClientPlansSavingsaccounts
+      summary: Returns a collection of investment plans (savings accounts) for the specified client.
+      description: Returns a collection of investment plans (savings accounts) for the specified client.
+      tags:
+        - savingsaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/savingsaccounts/{planId}:
+    delete:
+      operationId: DeleteClientSavingsaccount
+      summary: Delete investment plan (savings account)
+      description: Delete investment plan (savings account)
+      tags:
+        - savingsaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientSavingsaccount
+      summary: Get the specified Plan
+      description: Get the specified Plan
+      tags:
+        - savingsaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientSavingsaccount
+      summary: Update investment plan (savings account)
+      description: Update investment plan (savings account)
+      tags:
+        - savingsaccounts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/valuations:
+    get:
+      operationId: ListClientPlansValuations
+      summary: Get a list of valuations for the plan for the logged in user.
+      description: Get a list of valuations for the plan for the logged in user.
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/valuations/propertyvaluations:
+    get:
+      operationId: ListClientPlansValuationsPropertyvaluations
+      summary: ListClientPlansValuationsPropertyvaluations operation
+      description: 
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/valuations/timeseries:
+    get:
+      operationId: ListClientPlansValuationsTimeseries
+      summary: Get a list of aggregated valuations for all the plans for the logged in user.
+      description: Get a list of aggregated valuations for all the plans for the logged in user.
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/valuations/{valuationId}:
+    get:
+      operationId: GetClientValuation
+      summary: Returns a single valuation resource for the specified valuationId
+      description: Returns a single valuation resource for the specified valuationId
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/plans/{planId}/valuations/timeseries:
+    get:
+      operationId: ListClientPlanValuationsTimeseries
+      summary: Get a list of aggregated valuations for the plan for the logged in user.
+      description: Get a list of aggregated valuations for the plan for the logged in user.
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/professionalcontacts:
+    get:
+      operationId: ListClientsProfessionalcontacts
+      summary: Gets a list of professional contacts
+      description: Gets a list of professional contacts
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/valuations/assetliability_timeseries:
+    get:
+      operationId: ListClientValuationsAssetliabilityTimeseries
+      summary: Get a list of aggregated valuations for assets and for liabilites for all the plans and accounts for the logged in user.
+      description: Get a list of aggregated valuations for assets and for liabilites for all the plans and accounts for the logged in user.
+      tags:
+        - valuations
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/valuations/portfolio_valuations:
+    get:
+      operationId: ListClientValuationsPortfolioValuations
+      summary: Get a list of valuations for all plans for the logged in user.
+      description: Get a list of valuations for all plans for the logged in user.
+      tags:
+        - valuations
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/valuations/timeseries:
+    get:
+      operationId: ListClientValuationsTimeseries
+      summary: Get a list of aggregated valuations for all the plans and accounts for the logged in user.
+      description: Get a list of aggregated valuations for all the plans and accounts for the logged in user.
+      tags:
+        - valuations
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{partyId}:
+    head:
+      operationId: ExistsClient
+      summary: ExistsClient operation
+      description: 
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{partyId}/advisers:
+    get:
+      operationId: ListClientsAdvisers
+      summary: Get advisers for clients. The first one is the servicing adviser. Others will be added in future releases
+      description: Get advisers for clients. The first one is the servicing adviser. Others will be added in future releases
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{partyId}/contacts:
+    get:
+      operationId: ListClientContacts
+      summary: Get Contact Details
+      description: Get Contact Details
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{partyId}/contacts/{contactId}:
+    delete:
+      operationId: DeleteClientContact
+      summary: Delete the specified Contact Details
+      description: Delete the specified Contact Details
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsClientContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientContact
+      summary: Update the specified Contact Details
+      description: Update the specified Contact Details
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{partyId}/contacts/{contactId}/markasdefault:
+    patch:
+      operationId: MarkasdefaultClientContact
+      summary: Mark the specified Contact Detail as default.
+      description: Mark the specified Contact Detail as default.
+      tags:
+        - clients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/corporates:
+    post:
+      operationId: CreateCorporate
+      summary: CreateCorporate operation
+      description: 
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/corporates/{partyId}:
+    head:
+      operationId: ExistsCorporate
+      summary: ExistsCorporate operation
+      description: 
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCorporate
+      summary: GetCorporate operation
+      description: 
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateCorporate
+      summary: UpdateCorporate operation
+      description: 
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/corporates/{partyId}/contacts:
+    get:
+      operationId: ListCorporateContacts
+      summary: Get Contact Details
+      description: Get Contact Details
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/corporates/{partyId}/contacts/{contactId}:
+    delete:
+      operationId: DeleteCorporateContact
+      summary: Delete the specified Contact Details
+      description: Delete the specified Contact Details
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsCorporateContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCorporateContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateCorporateContact
+      summary: Update the specified Contact Details
+      description: Update the specified Contact Details
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/corporates/{partyId}/contacts/{contactId}/markasdefault:
+    patch:
+      operationId: MarkasdefaultCorporateContact
+      summary: Mark the specified Contact Detail as default.
+      description: Mark the specified Contact Detail as default.
+      tags:
+        - corporates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/countries:
+    get:
+      operationId: ListCountries
+      summary: Get list of Countries
+      description: Get list of Countries
+      tags:
+        - countries
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/countries/{countryCode}/counties:
+    get:
+      operationId: ListCountriesCounties
+      summary: Get list of Counties for the specified country
+      description: Get list of Counties for the specified country
+      tags:
+        - counties
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents:
+    post:
+      operationId: CreateDocument
+      summary: CreateDocument operation
+      description: 
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListDocuments
+      summary: "Return user documents from private storage. This will include documents
+shared with this user"
+      description: "Return user documents from private storage. This will include documents
+shared with this user"
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents/statistics:
+    get:
+      operationId: GetDocumentStatistics
+      summary: Provides total amount of storage currently used and the total amount available
+      description: Provides total amount of storage currently used and the total amount available
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents/{documentId}:
+    delete:
+      operationId: DeleteDocument
+      summary: Deletes document
+      description: Deletes document
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsDocument
+      summary: Returns document data from private storage
+      description: Returns document data from private storage
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateDocument
+      summary: Updates document metadata
+      description: Updates document metadata
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents/{documentId}/content:
+    get:
+      operationId: GetDocumentContent
+      summary: Returns document content from private storage
+      description: Returns document content from private storage
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateDocumentContent
+      summary: Updates document contents
+      description: Updates document contents
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents/{documentId}/share:
+    post:
+      operationId: ShareDocument
+      summary: Shares a document to public. Any user who has a access to client record will be able to view this document
+      description: Shares a document to public. Any user who has a access to client record will be able to view this document
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/documents/{documentId}/unshare:
+    post:
+      operationId: UnshareDocument
+      summary: Unshares document. Document will be available only to owner
+      description: Unshares document. Document will be available only to owner
+      tags:
+        - documents
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ClientStorage
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ClientStorage)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}:
+    get:
+      operationId: GetGroup
+      summary: Get group by Id.
+      description: Get group by Id.
+      tags:
+        - groups
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands:
+    get:
+      operationId: ListGroupBrands
+      summary: Lists all brands for the specified group.
+      description: Lists all brands for the specified group.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands/closest:
+    get:
+      operationId: GetGroupBrandClosest
+      summary: Get closest brand for specified group
+      description: Get closest brand for specified group
+      tags:
+        - closest
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands/{brandId}:
+    get:
+      operationId: GetGroupBrand
+      summary: Get a brand by id and groupId.
+      description: Get a brand by id and groupId.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchGroupBrand
+      summary: Update brand
+      description: Update brand
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/lineage:
+    get:
+      operationId: ListGroupsLineage
+      summary: Get lineage of specified group
+      description: Get lineage of specified group
+      tags:
+        - groups
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/leads/search:
+    post:
+      operationId: CreateLeadsSearch
+      summary: Searchs leads using filters and ordering specified in request
+      description: Searchs leads using filters and ordering specified in request
+      tags:
+        - search
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/leads/{partyId}:
+    head:
+      operationId: ExistsLead
+      summary: ExistsLead operation
+      description: 
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/leads/{partyId}/contacts:
+    get:
+      operationId: ListLeadContacts
+      summary: Get Contact Details
+      description: Get Contact Details
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/leads/{partyId}/contacts/{contactId}:
+    delete:
+      operationId: DeleteLeadContact
+      summary: Delete the specified Contact Details
+      description: Delete the specified Contact Details
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsLeadContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetLeadContact
+      summary: Get the specified Contact Details
+      description: Get the specified Contact Details
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateLeadContact
+      summary: Update the specified Contact Details
+      description: Update the specified Contact Details
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/leads/{partyId}/contacts/{contactId}/markasdefault:
+    patch:
+      operationId: MarkasdefaultLeadContact
+      summary: Mark the specified Contact Detail as default.
+      description: Mark the specified Contact Detail as default.
+      tags:
+        - leads
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/parties/{partyId}:
+    head:
+      operationId: ExistsParty
+      summary: ExistsParty operation
+      description: 
+      tags:
+        - parties
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/parties/{partyId}/tasks:
+    get:
+      operationId: ListPartiesTasks
+      summary: Retrieves a list of Tasks for the specified Party.
+      description: Retrieves a list of Tasks for the specified Party.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/people:
+    post:
+      operationId: CreatePerson
+      summary: (TODO) Create a Person
+      description: (TODO) Create a Person
+      tags:
+        - people
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/people/{partyId}:
+    head:
+      operationId: ExistsPerson
+      summary: (TODO) Get the specified Person
+      description: (TODO) Get the specified Person
+      tags:
+        - people
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetPerson
+      summary: (TODO) Get the specified Person
+      description: (TODO) Get the specified Person
+      tags:
+        - people
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdatePerson
+      summary: (TODO) Update a Person
+      description: (TODO) Update a Person
+      tags:
+        - people
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plantypes/{planTypeId}:
+    get:
+      operationId: GetPlantype
+      summary: Get a PlanType
+      description: Get a PlanType
+      tags:
+        - plans
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v1
+  /v1/productproviders/search:
+    get:
+      operationId: ListProductproviderSearches
+      summary: Search Product Providers by name
+      description: Search Product Providers by name
+      tags:
+        - productproviders
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/tasks:
+    post:
+      operationId: CreateTask
+      summary: Creates a new Task.
+      description: Creates a new Task.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListTasks
+      summary: "Retrieves a list of Tasks for the current user.
+            
+Example filters:
+    $filter=taskId in (1, 2, 3)"
+      description: "Retrieves a list of Tasks for the current user.
+            
+Example filters:
+    $filter=taskId in (1, 2, 3)"
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/tasks/settings:
+    get:
+      operationId: GetTaskSettings
+      summary: Retrievs the task notification settings.
+      description: Retrievs the task notification settings.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateTaskSettings
+      summary: Update the existing task notification settings.
+      description: Update the existing task notification settings.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/tasks/{taskId}:
+    head:
+      operationId: ExistsTask
+      summary: Retrieves the details of the specified Task.
+      description: Retrieves the details of the specified Task.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetTask
+      summary: Retrieves the details of the specified Task.
+      description: Retrieves the details of the specified Task.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateTask
+      summary: Updates the specified Task.
+      description: Updates the specified Task.
+      tags:
+        - tasks
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v1
+  /v1/users/me/brands:
+    get:
+      operationId: ListUserMesBrands
+      summary: [DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.
+      description: [DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v2/advisers/{adviserId}:
+    get:
+      tags:
+        - advisers
+      summary: Returns an adviser for a given adviser.
+      operationId: GetAdviser
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: path
+          name: adviserId
+          description: Adviser identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Adviser
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients:
+    post:
+      tags:
+        - clients
+      summary: Creates a client.
+      operationId: CreateClient
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: Client document
+          required: true
+          schema:
+            $ref: #/definitions/Client
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: #/definitions/Client
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Location:
+              description: Location of newly created resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}:
+    get:
+      tags:
+        - clients
+      summary: Returns a clients for a given client.
+      operationId: GetClient
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Client
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+    put:
+      tags:
+        - clients
+      summary: Updates a client for a given client.
+      operationId: UpdateClient
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: Client document
+          required: true
+          schema:
+            $ref: #/definitions/Client
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Client
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/documents:
+    get:
+      tags:
+        - documents
+      summary: Returns a list of documents for a given client.
+      description: "To filter by tags, append the following to the query string.
+            
+`..?filter=tag in ('tag1','tag2' )`"
+      operationId: ListClientDocuments
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: filter
+          description: "Used to filter documents. Supported fields: id(in, eq, gt, lt), createdat(gt, lt), tag(in), linked_entities.type(in),
+             linked_entities.id(in, eq), properties._status.name(eq), properties._clientDocumentId(eq), properties._isEsignatureDocument(eq),
+             properties._category.name(eq), properties._subCategory.name(eq), properties._fileType.name(eq)...
+             Sample: filter=tag in ('private22', 'tag1')"
+          type: string
+        -
+          in: query
+          name: orderBy
+          description: "Supported fields: id, createdat, title. Supported directions: asc, desc. Sample: orderBy=name desc"
+          type: string
+        -
+          in: query
+          name: skip
+          description: Number of records to skip. Must be greater than or equal to zero
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: query
+          name: top
+          description: The number of records to retrieve (default 25, max 100)
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/DocumentCollection
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Storage
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Storage)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/documents/{documentId}:
+    get:
+      tags:
+        - documents
+      summary: Returns a document for a given client and document.
+      description: "Use this endpoint to retrieve a client's document metadata.
+A successful response (200), will also return a `x-iflo-object-location` response header that will contain a pre-authenticated and signed hyperlink value.
+Use this hyperlink to download (GET) the associated object content.
+*Note:*
+* No other headers are required for the object download, a simple GET on the hyperlink is all that is required.
+* The object hyperlink is signed with an expiry of 15 minutes, so you have 15 minutes to initiate the download before the link will expire.
+* This link will also work directly in a browser by pasting the link into the location bar."
+      operationId: GetClientDocument
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: documentId
+          description: Document identifier.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Document
+          headers:
+            x-iflo-object-location:
+              description: signed GET URI for object resource
+              type: string
+            x-iflo-version-id:
+              description: document version id
+              type: integer
+              format: int32
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Storage
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Storage)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/expenditures/{expenditureId}:
+    delete:
+      tags:
+        - expenditures
+        - beta
+      summary: Deletes a client's expenditure record.
+      operationId: DeleteClientExpenditure
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: expenditureId
+          description: The identifier of the expenditure record.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        204:
+          description: No Content
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+    get:
+      tags:
+        - expenditures
+        - beta
+      summary: Retrieves a client's expenditure record.
+      operationId: GetClientExpenditure
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: expenditureId
+          description: The id of the expenditure record.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the expenditure categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Expenditure
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the expenditure categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+    put:
+      tags:
+        - expenditures
+        - beta
+      summary: Updates a client's expenditure record.
+      operationId: UpdateClientExpenditure
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: expenditureId
+          description: The identifier for the expenditure record to update.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the expenditure categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: The updated details for the expenditure.
+          required: true
+          schema:
+            $ref: #/definitions/Expenditure
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Expenditure
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the expenditure categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/incomes:
+    post:
+      tags:
+        - incomes
+        - beta
+      summary: Creates an income record for a client.
+      operationId: CreateClientIncome
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: The created income record.
+          required: true
+          schema:
+            $ref: #/definitions/CreateIncome
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: #/definitions/Income
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Location:
+              description: Location of newly created resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+    get:
+      tags:
+        - incomes
+        - beta
+      summary: Returns a list of incomes for a given client.
+      operationId: ListClientIncomes
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: filter
+          description: "The returned list of questions can be filtered using one or more of the following supported fields and operators:
+            
+* `id` (`in`)
+* `employment.id` (`in`, `eq`)
+* `frequency` (`in`, `eq`)
+* `lastupdated` (`eq`,`ne`,`in`,`gt`,`ge`,`lt`,`le`)
+            
+Usage examples:
+* `filter=id in (1,2)`
+* `filter=employment.id eq 22 and id in (1,2)`
+* `filter=frequency eq 'Single' or frequency in ('Single','Monthly')`.
+            
+For further details of how to use the filter parameter see [QueryLang](docs/ApiQueryLang)."
+          type: string
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: query
+          name: skip
+          description: Optional. Number of records to skip. Must be greater than or equal to zero. Defaults to zero if not specified.
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: top
+          description: Optional. The number of records to retrieve (max 500). Defaults to 100 if not specified.
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/IncomeCollection
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/incomes/{incomeId}:
+    delete:
+      tags:
+        - incomes
+        - beta
+      summary: Deletes a client's income record.
+      operationId: DeleteClientIncome
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: incomeId
+          description: The identifier for the income record.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        204:
+          description: No Content
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+    get:
+      tags:
+        - incomes
+        - beta
+      summary: Returns the income for a given client and income.
+      operationId: GetClientIncome
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: incomeId
+          description: The identifier for the income record.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Income
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+    put:
+      tags:
+        - incomes
+        - beta
+      summary: Updates a client's income record.
+      operationId: UpdateClientIncome
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: The client identifier. The special value "me" can be used to indicate the authenticated user.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: incomeId
+          description: The identifier for the income record.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: Prefer
+          description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+          type: string
+          enum:
+            - x-iflo-apiversion=1
+            - x-iflo-apiversion=2
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: The updated income record.
+          required: true
+          schema:
+            $ref: #/definitions/Income
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Income
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Preference-Applied:
+              description: "Used to indicate which format the income categories are returned in. Valid options are: 'x-iflo-apiversion=1' or 'x-iflo-apiversion=2'. If not specified the default is 'x-iflo-apiversion=1'"
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.FactFind
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.FactFind)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/relationships:
+    get:
+      tags:
+        - relationships
+      summary: Returns a list of relationships for a given client.
+      operationId: ListClientRelationships
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: skip
+          description: Optional. The number of records to skip. If not specified it defaults to 0.
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: top
+          description: Optional. The number of records to retrieve (the maximum is 500). If not specified it defaults to 100.
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/RelationshipCollection
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/relationships/{relationshipId}:
+    get:
+      tags:
+        - relationships
+      summary: Returns a relationship for a given client and relationship.
+      operationId: GetClientRelationship
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: relationshipId
+          description: Relationship identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Relationship
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/servicecases:
+    get:
+      tags:
+        - servicecases
+      summary: Returns a list of service cases for a given client.
+      description: Allows an API consumer to get all service cases.
+      operationId: ListClientServicecases
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: filter
+          description: "List can be filtered using one or more supported fields and operators below.
+Supported fields (operators) are:
+* `client.id` (`eq`, `in`)
+* `jointclient.id` (`eq`,`in`) e.g. ?filter= jointclient.id in (1,555666913,111)
+* `documentBinder.id` (`eq`, `in`) e.g. ?filter= documentBinder.id eq 1
+* `startedAt` (`eq`)
+* `adviser.id` (`eq`, `in')
+* `documentBinder.name` (`startswith`)
+* `status` (`startswith`)
+* `adviser.name` (`startswith`)
+* `description` (`startswith`) e.g. ?filter= description startswith 'Equity Release'
+* `id` (`eq`, `in`)
+* `plan.id` (`eq`, `in`)
+* `isCompleted` (`eq`)
+See [QueryLang](docs/ApiQueryLang) for further usage details."
+          type: string
+        -
+          in: query
+          name: orderby
+          description: "Supported Sort Properties:
+* `reference` (`asc` or `desc`)
+* `description` (`asc` or `desc`)
+* `isJoint` (`asc` or `desc`)
+* `status` (`asc` or `desc`)
+* `adviser.name` (`asc` or `desc`)
+* `documentBinder.name` (`asc` or `desc`)
+* `id` (`asc` or `desc`)
+Default `reference` `desc`."
+          type: string
+        -
+          in: query
+          name: skip
+          description: Number of records to skip. Must be greater than or equal to zero
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: top
+          description: The number of records to retrieve (default 25, max 100)
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/ServiceCaseCollection
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/clients/{clientId}/servicecases/{serviceCaseId}:
+    get:
+      tags:
+        - servicecases
+      summary: Returns a service case for a given client and service case.
+      description: Allows an API consumer to get a service case by Id.
+      operationId: GetClientServicecase
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: clientId
+          description: Client identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: path
+          name: serviceCaseId
+          description: ServiceCase identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/ServiceCase
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/documents/{documentId}:
+    get:
+      tags:
+        - documents
+      summary: Gets a single document by id
+      operationId: GetDocument
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: documentId
+          description: Document identifier.
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Document
+          headers:
+            x-iflo-object-location:
+              description: signed GET URI for object resource
+              type: string
+            x-iflo-version-id:
+              description: document version id
+              type: integer
+              format: int32
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Microservice.ProviderIntegration
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ProviderIntegration)
+        scopes: []
+        swaggerVersion: v2
+  /v2/leads:
+    post:
+      tags:
+        - leads
+      summary: Create a lead.
+      operationId: CreateLead
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: query
+          name: tenantId
+          description: Tenant identifier, used to filter by tenant. Only use under system reach
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+        -
+          in: body
+          name: body
+          description: Lead document
+          required: true
+          schema:
+            $ref: #/definitions/Lead
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: #/definitions/Lead
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+            Location:
+              description: Location of newly created resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/leads/{leadId}:
+    get:
+      tags:
+        - leads
+      summary: Returns a given lead.
+      operationId: GetLead
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: leadId
+          description: Lead identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: query
+          name: tenantId
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Lead
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/productproviders:
+    get:
+      tags:
+        - productproviders
+      summary: Returns a list of product providers.
+      description: "Gets a list of ProductProvider. Some specific filtering is optionally supported:
+
+The following fields are supports for `startswith`:
+* `name`
+
+*Example*
+
+`top=5&amp;Skip=1&amp;filter= name startswith '21'`"
+      operationId: ListProductproviders
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: query
+          name: filter
+          description: 
+          type: string
+        -
+          in: query
+          name: skip
+          description: 
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: top
+          description: 
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/ProductProviderCollection
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/tenants/{tenantId}:
+    get:
+      tags:
+        - tenants
+        - beta
+      summary: Retrieves the tenant resource specified
+      description: Retrieves the tenant resource specified. Tenants are typically resources that represent a firm, legal entity or network.
+      operationId: GetTenant
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: path
+          name: tenantId
+          description: Tenant identifier
+          required: true
+          type: integer
+          format: int32
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/Tenant
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+        404:
+          description: Not Found
+      x-intelliflo-api:
+        service: Monolith.Crm
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Crm)
+        scopes: []
+        swaggerVersion: v2
+  /v2/time_entries:
+    get:
+      tags:
+        - timeentries
+      summary: Returns a list of time entries.
+      operationId: ListTimeEntries
+      produces:
+        - application/json
+      parameters:
+        -
+          in: header
+          name: Accept
+          type: string
+        -
+          in: header
+          name: Authorization
+          required: true
+          type: string
+        -
+          in: query
+          name: filter
+          description: "Supported Filters:
+* `startedAt` (`ge`)
+* `endedAt` (`le`)
+* `createdAt` (`ge`)
+            
+Usage Examples:
+* `?filter= startedAt ge 2023-09-21T00:00:00Z and endedAt le 2025-01-01T00:00:00Z`.
+* `?filter= createdAt ge 2023-09-21T00:00:00Z.
+            
+See [QueryLang](docs/ApiQueryLang) for further usage details."
+          type: string
+        -
+          in: query
+          name: skip
+          description: The number of records to skip. Must be greater than or equal to zero.
+          type: integer
+          format: int32
+          default: 0
+        -
+          in: query
+          name: top
+          description: "The number of records to retrieve (default: 100, max: 500)."
+          type: integer
+          format: int32
+          default: 100
+        -
+          in: header
+          name: x-api-key
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: #/definitions/TimeEntryCollection2
+          headers:
+            Content-Type:
+              description: Content type for the returned resource
+              type: string
+        400:
+          description: Bad Request
+        401:
+          description: Unauthorized
+          headers:
+            WWW-Authenticate:
+              description: Bearer
+              type: string
+        403:
+          description: Forbidden
+      x-intelliflo-api:
+        service: Microservice.TimeRecording
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.TimeRecording)
+        scopes: []
+        swaggerVersion: v2
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: "https://login.intelliflo.com/oauth2/authorize"
+          tokenUrl: "https://login.intelliflo.com/oauth2/token"
+          scopes: {}
+  schemas: {}
+security:
+  -
+    oauth2: []
+tags:
+  -
+    name: advisers
+    description: Operations related to advisers
+  -
+    name: brand
+    description: Operations related to brand
+  -
+    name: brands
+    description: Operations related to brands
+  -
+    name: clients
+    description: Operations related to clients
+  -
+    name: closest
+    description: Operations related to closest
+  -
+    name: corporates
+    description: Operations related to corporates
+  -
+    name: counties
+    description: Operations related to counties
+  -
+    name: countries
+    description: Operations related to countries
+  -
+    name: creditcards
+    description: Operations related to creditcards
+  -
+    name: currentaccounts
+    description: Operations related to currentaccounts
+  -
+    name: documents
+    description: Operations related to documents
+  -
+    name: financialsummary
+    description: Operations related to financialsummary
+  -
+    name: groups
+    description: Operations related to groups
+  -
+    name: insights
+    description: Operations related to insights
+  -
+    name: investments
+    description: Operations related to investments
+  -
+    name: leads
+    description: Operations related to leads
+  -
+    name: loans
+    description: Operations related to loans
+  -
+    name: mortgages
+    description: Operations related to mortgages
+  -
+    name: parties
+    description: Operations related to parties
+  -
+    name: pensions
+    description: Operations related to pensions
+  -
+    name: people
+    description: Operations related to people
+  -
+    name: plans
+    description: Operations related to plans
+  -
+    name: productproviders
+    description: Operations related to productproviders
+  -
+    name: protections
+    description: Operations related to protections
+  -
+    name: relationships
+    description: Operations related to relationships
+  -
+    name: savingsaccounts
+    description: Operations related to savingsaccounts
+  -
+    name: search
+    description: Operations related to search
+  -
+    name: tasks
+    description: Operations related to tasks
+  -
+    name: tenants
+    description: Operations related to tenants
+  -
+    name: timeentries
+    description: Operations related to timeentries
+  -
+    name: valuations
+    description: Operations related to valuations
