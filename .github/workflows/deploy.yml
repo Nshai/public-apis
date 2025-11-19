@@ -1,9 +1,8 @@
-# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]  # Change to 'master' if needed
+    branches: [ master ]  # Ensure 'master' is correct for your default branch
 
 permissions:
   contents: read
@@ -18,7 +17,7 @@ jobs:
   build-and-deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://nshai.github.io/public-apis  # Explicitly set the Pages URL
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,7 +34,7 @@ jobs:
 
       - name: Build with Vite
         run: npm run build
-        # Ensure your package.json has: "build": "vite build"
+        # Confirm your package.json has: "build": "vite build"
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
